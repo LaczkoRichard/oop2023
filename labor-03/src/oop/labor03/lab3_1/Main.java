@@ -19,7 +19,9 @@ public class Main{
         System.out.println(customer1);
         System.out.println();
 
+        customer2.getAccount().deposit(112);
         System.out.println(customer2);
+        customer1.getAccount().deposit(customer2.getAccount().getBalance());
         customer2.closeAcount();
         System.out.println(customer2);
         System.out.println();

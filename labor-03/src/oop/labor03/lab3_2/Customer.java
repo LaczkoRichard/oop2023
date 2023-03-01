@@ -26,7 +26,7 @@ public class Customer {
     }
 
     public BankAccount getAccount(String accountNumber) {
-        for(int i=0;i<MAX_ACCOUNTS;i++)
+        for(int i=0;i<this.numAccounts;i++)
             if(accounts[i].getAcountNumber().equals(accountNumber))
                 return accounts[i];
 
@@ -52,15 +52,15 @@ public class Customer {
     public void closeAcount(String accountNumber){
 //                this.account = null;
         int index=-1;
-        for(int i=0;i<MAX_ACCOUNTS;i++)
+        for(int i=0;i<this.numAccounts;i++)
             if(accounts[i].getAcountNumber().equals(accountNumber)) {
                 accounts[i] = null;
                 index=i;
                 break;
             }
         if (index>-1){
-            System.arraycopy(accounts, index + 1, accounts, index, MAX_ACCOUNTS - 1 - index);
-            accounts[MAX_ACCOUNTS-1]=null;
+            System.arraycopy(accounts, index + 1, accounts, index, this.numAccounts - 1 - index);
+            accounts[this.numAccounts-1]=null;
             numAccounts--;
         }
         else System.out.println("There was no Account found!");
