@@ -13,9 +13,7 @@ public class Customer {
     }
 
     public void addAccount(BankAccount account) {
-
-        if(accounts.contains(account)) return;
-        accounts.add(account);
+        if(getAccount(account.getAcountNumber()) == null) accounts.add(account);
     }
 
     public BankAccount getAccount(String accountNumber) {
